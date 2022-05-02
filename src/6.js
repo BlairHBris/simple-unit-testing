@@ -1,12 +1,16 @@
+function getCircleArea(radius) {
+  return parseFloat(3.14159265 * (radius ** 2)).toFixed(2)
+}
+
 function getCircleAreas(radiusArr) {
-  var areasArr = [];
+  let areasArr = [];
 
   for (var i = 0; i < radiusArr.length; i++) {
-    var circleArea = getCircleArea(radiusArr[i]);
-    areasArr.push(circleArea);
+    const circleArea = getCircleArea(radiusArr[i]);
+    areasArr.push(Number(circleArea));
   }
 
   return areasArr;
 }
 
-module.exports = getCircleAreas
+module.exports = {getCircleAreas,}

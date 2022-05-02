@@ -3,6 +3,7 @@ const { whoWon } = require("../src/2")
 const { getMentorInfo } = require("../src/3")
 const { myFunction } = require("../src/4")
 const { compareNumbers } = require("../src/5")
+const { getCircleAreas } = require("../src/6")
 
 describe('checkFive function tests', () => {
     it('confirms a given number is equal to 5', () => {
@@ -106,5 +107,19 @@ describe('compareNumbers function tests', () => {
     it('takes two numbers and declares the first is the bigger or equal to the other one', () => {
         const result = compareNumbers(4,3)
         expect(result).toBe(`${4} is bigger than or equal to ${3}`)
+    })
+})
+
+describe('getCircleAreas function tests', () => {
+    it('Adds items to an array when given a radius', () => {
+        const array = [3,5]
+        const transform = jest
+        .fn()
+        .mockReturnValueOnce(28.27)
+        .mockReturnValueOnce(78.54)
+
+        const newArray = getCircleAreas(array)
+
+        expect(newArray).toEqual([28.27, 78.54])
     })
 })
