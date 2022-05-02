@@ -2,6 +2,7 @@ const { checkFive } = require("../src/1")
 const { whoWon } = require("../src/2")
 const { getMentorInfo } = require("../src/3")
 const { myFunction } = require("../src/4")
+const { compareNumbers } = require("../src/5")
 
 describe('checkFive function tests', () => {
     it('confirms a given number is equal to 5', () => {
@@ -94,5 +95,16 @@ describe('myFunction function tests', () => {
     it('calculates gross and net income in the other tax codes', () => {
         const result = myFunction(100000, 'A', 5000, 3000, true)
         expect(result).toBe(`Your gross income is £${100000} and your net income is £${76599.75}.`)
+    })
+})
+
+describe('compareNumbers function tests', () => {
+    it('takes two numbers and declares the first is the smaller one', () => {
+        const result = compareNumbers(3,4)
+        expect(result).toBe(`${3} is smaller than ${4}`)
+    })
+    it('takes two numbers and declares the first is the bigger or equal to the other one', () => {
+        const result = compareNumbers(4,3)
+        expect(result).toBe(`${4} is bigger than or equal to ${3}`)
     })
 })

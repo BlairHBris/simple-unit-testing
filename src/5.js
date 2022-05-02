@@ -1,11 +1,11 @@
 function compareNumbers(m, n) {
   if (m < n) {
-    let message = m + " is smaller than " + n;
+    return`${m} is smaller than ${n}`
   } else {
-    let message = m + " is bigger than or equal to " + n;
+    return `${m} is bigger than or equal to ${n}`;
   }
 
-  return message;
+
 }
 
-module.exports = compareNumbers
+module.exports = {compareNumbers,}
