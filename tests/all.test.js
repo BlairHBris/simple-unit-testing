@@ -1,4 +1,5 @@
 const { checkFive } = require("../src/1")
+const { removeVowelsForWords } = require("../src/10")
 const { whoWon } = require("../src/2")
 const { getMentorInfo } = require("../src/3")
 const { myFunction } = require("../src/4")
@@ -148,5 +149,18 @@ describe('removeVowels function tests', () => {
     it('can remove and replace upper case consenants', () => {
         const result = removeVowels('RaVeNS')
         expect(result).toBe('_a_e__')
+    })
+})
+
+describe('removeVowelsforWords', () => {
+    it('can remove and replace lower case consenants', () => {
+        const words = ['apple', 'grapes']
+        const result = removeVowelsForWords(words)
+        expect(result).toEqual(['a___e', '__a_e_'])
+    })
+    it('can remove and replace upper case consenants', () => {
+        const words = ['APPLe', 'GRaPeS']
+        const result = removeVowelsForWords(words)
+        expect(result).toEqual(["____e", "__a_e_"])
     })
 })
