@@ -5,6 +5,7 @@ const { myFunction } = require("../src/4")
 const { compareNumbers } = require("../src/5")
 const { getCircleAreas } = require("../src/6")
 const { getCircleArea } = require("../src/7")
+const { greetPeople } = require("../src/8")
 
 describe('checkFive function tests', () => {
     it('confirms a given number is equal to 5', () => {
@@ -114,13 +115,7 @@ describe('compareNumbers function tests', () => {
 describe('getCircleAreas function tests', () => {
     it('Adds items to an array when given a radius', () => {
         const array = [3,5]
-        const transform = jest
-        .fn()
-        .mockReturnValueOnce(28.27)
-        .mockReturnValueOnce(78.54)
-
         const newArray = getCircleAreas(array)
-
         expect(newArray).toEqual([28.27, 78.54])
     })
 })
@@ -130,4 +125,14 @@ describe('getCircleArea function tests', () => {
         const result = getCircleArea(3)
         expect(result).toEqual(28.27)
     })
+})
+
+describe('greatPeople function tests', () => {
+    const people = [
+        'Blair',
+        'Ry',
+        'Jaclyn'
+    ]
+    const result = greetPeople(people)
+    expect(result).toEqual('Hello BlairRyJaclyn')
 })
