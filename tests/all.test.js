@@ -1,6 +1,7 @@
 const { checkFive } = require("../src/1")
 const { removeVowelsForWords } = require("../src/10")
 const { greaterThan10 } = require("../src/11")
+const { getLargestNumber } = require("../src/13")
 const { whoWon } = require("../src/2")
 const { getMentorInfo } = require("../src/3")
 const { myFunction } = require("../src/4")
@@ -171,5 +172,13 @@ describe('greaterThan10 function tests', () => {
         const array = [-1,9,10,11]
         const result = greaterThan10(array)
         expect(result).toEqual([11])
+    })
+})
+
+describe('getLargestNumber function tests', () => {
+    it('determines which numbers in an array is the largest', () => {
+        const array = [-1,9,10,11]
+        const result = getLargestNumber(array)
+        expect(result).toEqual(11)
     })
 })
