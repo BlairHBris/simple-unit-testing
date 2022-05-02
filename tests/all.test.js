@@ -6,6 +6,7 @@ const { compareNumbers } = require("../src/5")
 const { getCircleAreas } = require("../src/6")
 const { getCircleArea } = require("../src/7")
 const { greetPeople } = require("../src/8")
+const { removeVowels } = require("../src/9")
 
 describe('checkFive function tests', () => {
     it('confirms a given number is equal to 5', () => {
@@ -128,11 +129,24 @@ describe('getCircleArea function tests', () => {
 })
 
 describe('greatPeople function tests', () => {
-    const people = [
-        'Blair',
-        'Ry',
-        'Jaclyn'
-    ]
-    const result = greetPeople(people)
-    expect(result).toEqual('Hello BlairRyJaclyn')
+    it('prints the designated message when given an array of people', () => {
+        const people = [
+            'Blair',
+            'Ry',
+            'Jaclyn'
+        ]
+        const result = greetPeople(people)
+        expect(result).toEqual('Hello BlairRyJaclyn')
+    })
+})
+
+describe('removeVowels function tests', () => {
+    it('can remove and replace lower case consenants', () => {
+        const result = removeVowels('ravens')
+        expect(result).toBe('_a_e__')
+    })
+    it('can remove and replace upper case consenants', () => {
+        const result = removeVowels('RaVeNS')
+        expect(result).toBe('_a_e__')
+    })
 })

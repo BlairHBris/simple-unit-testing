@@ -1,7 +1,7 @@
 function removeVowels(word) {
-  var characters = word.split("");
+  const characters = word.split("");
 
-  var result = [];
+  let result = [];
 
   characters.forEach(function(character) {
     if (
@@ -20,4 +20,4 @@ function removeVowels(word) {
   return result.join("");
 }
 
-module.exports = removeVowels;
+module.exports = {removeVowels,}
