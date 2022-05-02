@@ -1,4 +1,4 @@
-var mentors = [
+const mentors = [
     {
         name: 'Irina',
         title: 'Dr.',
