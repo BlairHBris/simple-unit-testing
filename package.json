@@ -1,7 +1,7 @@
 {
   "name": "simple-testing-exercises",
   "version": "1.0.0",
-  "description": "",
+  "description": "For each piece of working code in the `/src` directory:",
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll"
@@ -10,6 +10,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^27.3.1"
-  }
+    "jest": "^27.5.1"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlairHBris/simple-unit-testing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BlairHBris/simple-unit-testing/issues"
+  },
+  "homepage": "https://github.com/BlairHBris/simple-unit-testing#readme"
 }

@@ -11,4 +11,6 @@ function checkFive(num){
   return result;
 }
 
-module.exports = checkFive
+module.exports = {
+  checkFive,
+}
