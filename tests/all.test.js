@@ -1,5 +1,6 @@
 const { checkFive } = require("../src/1")
 const { removeVowelsForWords } = require("../src/10")
+const { greaterThan10 } = require("../src/11")
 const { whoWon } = require("../src/2")
 const { getMentorInfo } = require("../src/3")
 const { myFunction } = require("../src/4")
@@ -152,7 +153,7 @@ describe('removeVowels function tests', () => {
     })
 })
 
-describe('removeVowelsforWords', () => {
+describe('removeVowelsforWords function tests', () => {
     it('can remove and replace lower case consenants', () => {
         const words = ['apple', 'grapes']
         const result = removeVowelsForWords(words)
@@ -162,5 +163,13 @@ describe('removeVowelsforWords', () => {
         const words = ['APPLe', 'GRaPeS']
         const result = removeVowelsForWords(words)
         expect(result).toEqual(["____e", "__a_e_"])
+    })
+})
+
+describe('greaterThan10 function tests', () => {
+    it('determines which numbers in an array are less than 10', () => {
+        const array = [-1,9,10,11]
+        const result = greaterThan10(array)
+        expect(result).toEqual([11])
     })
 })
