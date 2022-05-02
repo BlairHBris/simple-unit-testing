@@ -1,6 +1,7 @@
 const { checkFive } = require("../src/1")
 const { removeVowelsForWords } = require("../src/10")
 const { greaterThan10 } = require("../src/11")
+const { sliceAndSort } = require("../src/12")
 const { getLargestNumber } = require("../src/13")
 const { whoWon } = require("../src/2")
 const { getMentorInfo } = require("../src/3")
@@ -172,6 +173,14 @@ describe('greaterThan10 function tests', () => {
         const array = [-1,9,10,11]
         const result = greaterThan10(array)
         expect(result).toEqual([11])
+    })
+})
+
+describe('sliceAndSort function tests', () => {
+    it('takes an array of numbers and returns an array with the 2nd and 3rd smallest values', () => {
+        const array = [3,6,2,7,1]
+        const result = sliceAndSort(array)
+        expect(result).toEqual([2,3])
     })
 })
 
