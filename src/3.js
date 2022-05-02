@@ -15,27 +15,25 @@ var mentors = [
 ];
 
 function getMentorInfo(mentors, name) {
-    var result;
-    var greeting = 'Hello ';
 
-    result = mentors.find(function (person) {
-        return person.name === name;
-    });
+    mentors.forEach(mentor => {
+        if(mentor.yearsOfExperience <= 10) {
+            mentor.jobTitle = "Junior Developer"
+        } else if(mentor.yearsOfExperience > 10 && mentor.yearsOfExperience <= 20) {
+            mentor.jobTitle = "Senior Developer"
+        } else if(mentor.yearsOfExperience > 20) {
+            mentor.jobTitle = "Very Senior Developer"
+        }
+        mentor.fullName = mentor.title + ' ' + mentor.name;
+    })
 
-    var mentorTitle = 'Junior Developer';
+    const requestedMentor = mentors.find(function (mentor) {
+        return mentor.name === name
+    })
 
-    if (result.yearsOfExp > 10) {
-        mentorTitle = 'Senior Developer';
-    } else if (result.yearsOfExp > 20) {
-        mentorTitle = 'Very Senior Developer';
-    }
-
-    result.jobTitle = mentorTitle;
-    result.fullName = result.title + ' ' + result.name;
-
-    return result;
+    return requestedMentor;
 }
 
-var result = getMentorInfo(mentors, 'Etza')
+getMentorInfo(mentors, 'Etza')
 
-module.exports = getMentorInfo
+module.exports = {getMentorInfo,}
