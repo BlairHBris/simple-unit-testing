@@ -1,8 +1,8 @@
 function myFunction(salary, taxCode, incomeTax1, incomeTax2, ownsCar) {
-  var totalIncomeTax = incomeTax1 + incomeTax2;
-  var studentLoan = (salary - 17775) * 0.09;
-  var originalSalary = salary;
-  var nationalInsurance = null;
+  const totalIncomeTax = incomeTax1 + incomeTax2;
+  const studentLoan = (salary - 17775) * 0.09;
+  const originalSalary = salary;
+  let nationalInsurance = null;
 
   if (taxCode === "1150L") {
     nationalInsurance = salary * 0.1;
@@ -12,21 +12,15 @@ function myFunction(salary, taxCode, incomeTax1, incomeTax2, ownsCar) {
     nationalInsurance = salary * 0.08;
   }
 
-  var deductions = [nationalInsurance, totalIncomeTax, studentLoan];
+  const deductions = [nationalInsurance, totalIncomeTax, studentLoan];
 
-  salary = salary - deductions[0];
-  salary = salary - deductions[1];
-  salary = salary - deductions[2];
+  salary = salary - deductions[0] - deductions[1] - deductions[2];
 
   return (
-    "Your gross income is £" +
-    originalSalary.toString() +
-    " and your net income is £" +
-    salary.toString() +
-    "."
+    `Your gross income is £${originalSalary} and your net income is £${salary}.`
   );
 }
 
-// console.log(myFunction(28000, "1150L", 1000, 580, false));
+// console.log(myFunction(100000, "1150L", 5000, 3000, true));
 
 module.exports = {myFunction,}
