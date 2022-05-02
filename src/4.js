@@ -29,4 +29,4 @@ function myFunction(salary, taxCode, incomeTax1, incomeTax2, ownsCar) {
 
 // console.log(myFunction(28000, "1150L", 1000, 580, false));
 
-module.exports = myFunction
+module.exports = {myFunction,}

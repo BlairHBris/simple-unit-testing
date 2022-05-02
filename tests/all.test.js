@@ -1,6 +1,7 @@
 const { checkFive } = require("../src/1")
 const { whoWon } = require("../src/2")
 const { getMentorInfo } = require("../src/3")
+const { myFunction } = require("../src/4")
 
 describe('checkFive function tests', () => {
     it('confirms a given number is equal to 5', () => {
@@ -78,5 +79,20 @@ describe('getMentorInfo function tests', () => {
             "name": "Etza", 
             "title": "Professor", 
             "yearsOfExperience": 30})
+    })
+})
+
+describe('myFunction function tests', () => {
+    it('calculates gross and net income in the highest tax code', () => {
+        const result = myFunction(100000, '1150L', 5000, 3000, true)
+        expect(result).toBe(`Your gross income is £${100000} and your net income is £${74599.75}.`)
+    })
+    it('calculates gross and net income in the lowest tax code', () => {
+        const result = myFunction(100000, 'ST', 5000, 3000, true)
+        expect(result).toBe(`Your gross income is £${100000} and your net income is £${79599.75}.`)
+    })
+    it('calculates gross and net income in the other tax codes', () => {
+        const result = myFunction(100000, 'A', 5000, 3000, true)
+        expect(result).toBe(`Your gross income is £${100000} and your net income is £${76599.75}.`)
     })
 })
