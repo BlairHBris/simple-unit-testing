@@ -1,5 +1,5 @@
 function getCircleArea(radius) {
-  return parseFloat(3.14159265 * (radius ** 2)).toFixed(2)
+  return (3.14159265 * (radius ** 2)).toFixed(2)
 }
 
 function getCircleAreas(radiusArr) {

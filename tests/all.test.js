@@ -4,6 +4,7 @@ const { getMentorInfo } = require("../src/3")
 const { myFunction } = require("../src/4")
 const { compareNumbers } = require("../src/5")
 const { getCircleAreas } = require("../src/6")
+const { getCircleArea } = require("../src/7")
 
 describe('checkFive function tests', () => {
     it('confirms a given number is equal to 5', () => {
@@ -121,5 +122,12 @@ describe('getCircleAreas function tests', () => {
         const newArray = getCircleAreas(array)
 
         expect(newArray).toEqual([28.27, 78.54])
+    })
+})
+
+describe('getCircleArea function tests', () => {
+    it('calculates the area of a circle given a radius', () => {
+        const result = getCircleArea(3)
+        expect(result).toEqual(28.27)
     })
 })
