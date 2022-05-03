@@ -3,6 +3,7 @@ const { removeVowelsForWords } = require("../src/10")
 const { greaterThan10 } = require("../src/11")
 const { sliceAndSort } = require("../src/12")
 const { getLargestNumber } = require("../src/13")
+const { getEven } = require("../src/14")
 const { whoWon } = require("../src/2")
 const { getMentorInfo } = require("../src/3")
 const { myFunction } = require("../src/4")
@@ -189,5 +190,18 @@ describe('getLargestNumber function tests', () => {
         const array = [-1,9,10,11]
         const result = getLargestNumber(array)
         expect(result).toEqual(11)
+    })
+})
+
+describe('getEven function tests', () => {
+    it('determines which positive numbers in a given array are even and returns them', () => {
+        const array = [1,2,3,4,5,6]
+        const result = getEven(array)
+        expect(result).toEqual([2,4,6])
+    })
+    it('determines which negative numbers in a given array are even and returns them', () => {
+        const array = [-1,-2,-3,-4,-5,-6]
+        const result = getEven(array)
+        expect(result).toEqual([-2,-4,-6])
     })
 })
